@@ -1,0 +1,11 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.PSOnScreenControllerOverlay.cpp.obj": [
+			"BaseInputWidget.gen.cpp.obj",
+			"PSOnScreenControllerOverlay.init.gen.cpp.obj",
+			"BaseInputWidget.cpp.obj",
+			"PSOnScreenControllerOverlay.cpp.obj"
+		]
+	}
+}
