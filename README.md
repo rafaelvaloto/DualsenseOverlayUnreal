@@ -1,4 +1,6 @@
-﻿The **DualSenseOnScreenOverlay** is a versatile and customizable widget for Unreal Engine, designed to seamlessly adapt to various screen sizes and resolutions. 
+﻿# Overlay Controllers, Dualsense Series for Unreal Engine 5.3, 5.4, and 5.5
+
+The **DualSenseOnScreenOverlay** is a versatile and customizable widget for Unreal Engine, designed to seamlessly adapt to various screen sizes and resolutions.
 
 It offers extensive compatibility with multiple DualSense controller models, providing flexible options to enhance integration and user interaction. 
 
@@ -43,9 +45,6 @@ class PLUGINTESTE_API AMyGameModeBase : public AGameModeBase
 	GENERATED_BODY()
 public:
 	AMyGameModeBase();
-	virtual void BeginPlay() override;
-
-	virtual void Tick(float DeltaTime) override;
 
 protected:
 	// Class that will contain the loaded Widget Blueprint
