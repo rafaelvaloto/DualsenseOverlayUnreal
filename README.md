@@ -31,6 +31,7 @@ Example of creating 4 players with different widgets
 
 ``` MyGameModeBase.h ```
 ```
+
 #pragma once
 
 #include "CoreMinimal.h"
@@ -46,22 +47,21 @@ class PLUGINTESTE_API AMyGameModeBase : public AGameModeBase
 	GENERATED_BODY()
 public:
 	AMyGameModeBase();
-
+	
 protected:
-	// Class that will contain the loaded Widget Blueprint
-	TSubclassOf<UUserWidget> DeviceWidgetBlueprintClass;
-
-	// Path do Widget Blueprint
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "UI", Meta = (AllowPrivateAccess = "true"))
-	FString WidgetBlueprintPath = TEXT("/PSOnScreenControllerOverlay/Blueprints/DualSenseWhiteBaseInputWidget.DualSenseWhiteBaseInputWidget_C");
-
 	virtual void PostLogin(APlayerController* NewPlayer) override;
 	virtual void HandleConnectedControllers(APlayerController* PlayerController);
+	TSubclassOf<UUserWidget> DeviceWidgetBlueprintClass;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "GameMode")
+	TSubclassOf<APawn> Player1PawnClass;
 };
 
 ```
 ``` MyGameModeBase.cpp ```
 ```
+// Fill out your copyright notice in the Description page of Project Settings.
+
 
 #include "MyGameModeBase.h"
 
@@ -86,97 +86,67 @@ void AMyGameModeBase::PostLogin(APlayerController* NewPlayer)
 	const int32 PlayerId = NewPlayer->GetLocalPlayer()->GetControllerId();
 	
 	UE_LOG(LogTemp, Warning, TEXT("Player local %d login..."), NewPlayer->GetLocalPlayer()->GetControllerId())
-
-	if (DeviceWidgetBlueprintClass == nullptr && !WidgetBlueprintPath.IsEmpty())
-	{
-		DeviceWidgetBlueprintClass = Cast<UClass>(StaticLoadObject(UClass::StaticClass(), nullptr, *WidgetBlueprintPath));
-		if (DeviceWidgetBlueprintClass == nullptr)
-		{
-			UE_LOG(LogTemp, Error, TEXT("Failed to load widget blueprint class from path: %s"), *WidgetBlueprintPath);
-			return;
-		}
-	}
-
-	if (UUserWidget* DeviceWidget = CreateWidget<UUserWidget>(NewPlayer, DeviceWidgetBlueprintClass))
-	{
-		UBaseInputWidget* WidgetCasting = Cast<UBaseInputWidget>(DeviceWidget);
-		if (!WidgetCasting)
-		{
-			UE_LOG(LogTemp, Error, TEXT("Failed to cast widget to BaseInputWidget"));
-			return;
-		}
-
-		if (PlayerId == 0)
-		{
-			WidgetCasting->SelectDevice(EDualSenseModel::Default);
-			WidgetCasting->AddToPlayerScreen(PlayerId);
-	
-			FInputModeGameAndUI InputMode;
-			InputMode.SetWidgetToFocus(WidgetCasting->TakeWidget());
-			NewPlayer->SetInputMode(InputMode);
-
-			if (UOverlaySlot* OverlaySlot = Cast<UOverlaySlot>(WidgetCasting->Slot))
-			{
-				OverlaySlot->SetHorizontalAlignment(HAlign_Center);
-				OverlaySlot->SetVerticalAlignment(VAlign_Top);
-			}
-			
-			UE_LOG(LogTemp, Log, TEXT("Widget loading Default Player: %d"), NewPlayer->GetLocalPlayer()->GetControllerId());
-		}
-		else if (PlayerId == 1)
-		{
-			WidgetCasting->SelectDevice(EDualSenseModel::CosmicRed);
-			WidgetCasting->AddToPlayerScreen(PlayerId);
-	
-			FInputModeGameAndUI InputMode;
-			InputMode.SetWidgetToFocus(WidgetCasting->TakeWidget());
-			NewPlayer->SetInputMode(InputMode);
-
-			if (UOverlaySlot* OverlaySlot = Cast<UOverlaySlot>(WidgetCasting->Slot))
-			{
-				OverlaySlot->SetHorizontalAlignment(HAlign_Center);
-				OverlaySlot->SetVerticalAlignment(VAlign_Bottom);
-			}
-			UE_LOG(LogTemp, Log, TEXT("Widget loading CosmicRed Player:: %d"), NewPlayer->GetLocalPlayer()->GetControllerId());
-		}
-		else if (PlayerId == 2)
-		{
-			WidgetCasting->SelectDevice(EDualSenseModel::MidnightBlack);
-			WidgetCasting->AddToPlayerScreen(PlayerId);
-	
-			FInputModeGameAndUI InputMode;
-			InputMode.SetWidgetToFocus(WidgetCasting->TakeWidget());
-			NewPlayer->SetInputMode(InputMode);
-
-			if (UOverlaySlot* OverlaySlot = Cast<UOverlaySlot>(WidgetCasting->Slot))
-			{
-				OverlaySlot->SetHorizontalAlignment(HAlign_Center);
-				OverlaySlot->SetVerticalAlignment(VAlign_Bottom);
-			}
-			UE_LOG(LogTemp, Log, TEXT("Widget loading MidnightBlack Player:: %d"), NewPlayer->GetLocalPlayer()->GetControllerId());
-		}
-		else if (PlayerId == 3)
-		{
-			WidgetCasting->SelectDevice(EDualSenseModel::GalacticPurple);
-			WidgetCasting->AddToPlayerScreen(PlayerId);
-	
-			FInputModeGameAndUI InputMode;
-			InputMode.SetWidgetToFocus(WidgetCasting->TakeWidget());
-			NewPlayer->SetInputMode(InputMode);
-
-			if (UOverlaySlot* OverlaySlot = Cast<UOverlaySlot>(WidgetCasting->Slot))
-			{
-				OverlaySlot->SetHorizontalAlignment(HAlign_Center);
-				OverlaySlot->SetVerticalAlignment(VAlign_Bottom);
-			}
-			UE_LOG(LogTemp, Log, TEXT("Widget loading GalacticPurple Player: %d"), NewPlayer->GetLocalPlayer()->GetControllerId());
-		}
-		
-	}
-
 	if (constexpr int32 MaxPlayer = 4; NewPlayer->IsLocalController() &&  (PlayerId + 1) < MaxPlayer)
 	{
 		HandleConnectedControllers(NewPlayer);
+	}
+	
+	if (!DeviceWidgetBlueprintClass)
+	{
+		DeviceWidgetBlueprintClass = Cast<UClass>(
+			StaticLoadObject(UClass::StaticClass(),nullptr,TEXT("/PSOnScreenControllerOverlay/Blueprints/DualSenseWhiteBaseInputWidget.DualSenseWhiteBaseInputWidget_C"))
+		);
+		if (!DeviceWidgetBlueprintClass)
+		{
+			UE_LOG(LogTemp, Error, TEXT("Failed to load widget blueprint class from path: /PSOnScreenControllerOverlay/Blueprints/DualSenseWhiteBaseInputWidget.DualSenseWhiteBaseInputWidget_C"));
+			return;
+		}
+	}
+
+	UUserWidget* DeviceWidget = CreateWidget<UUserWidget>(NewPlayer, DeviceWidgetBlueprintClass);
+	if (!DeviceWidget)
+	{
+		UE_LOG(LogTemp, Error, TEXT("Failed to create widget"));
+		return;
+	}
+
+	UBaseInputWidget* WidgetCasting = Cast<UBaseInputWidget>(DeviceWidget);
+	if (!WidgetCasting)
+	{
+		UE_LOG(LogTemp, Error, TEXT("Failed to cast widget to BaseInputWidget"));
+		return;
+	}
+
+	if (PlayerId == 0)
+	{
+		WidgetCasting->SelectDevice(EDualSenseModel::Default);
+		UE_LOG(LogTemp, Log, TEXT("Widget loading Default Player: %d"), NewPlayer->GetLocalPlayer()->GetControllerId());
+	}
+	else if (PlayerId == 1)
+	{
+		WidgetCasting->SelectDevice(EDualSenseModel::CosmicRed);
+		UE_LOG(LogTemp, Log, TEXT("Widget loading CosmicRed Player:: %d"), NewPlayer->GetLocalPlayer()->GetControllerId());
+	}
+	else if (PlayerId == 2)
+	{
+		WidgetCasting->SelectDevice(EDualSenseModel::MidnightBlack);
+		UE_LOG(LogTemp, Log, TEXT("Widget loading MidnightBlack Player:: %d"), NewPlayer->GetLocalPlayer()->GetControllerId());
+	}
+	else if (PlayerId == 3)
+	{
+		WidgetCasting->SelectDevice(EDualSenseModel::GalacticPurple);
+		UE_LOG(LogTemp, Log, TEXT("Widget loading GalacticPurple Player: %d"), NewPlayer->GetLocalPlayer()->GetControllerId());
+	}
+
+	FInputModeGameAndUI InputMode;
+	InputMode.SetWidgetToFocus(WidgetCasting->TakeWidget());
+	NewPlayer->SetInputMode(InputMode);
+
+	WidgetCasting->AddToPlayerScreen(PlayerId);
+	if (UOverlaySlot* OverlaySlot = Cast<UOverlaySlot>(WidgetCasting->Slot))
+	{
+		OverlaySlot->SetHorizontalAlignment(HAlign_Center);
+		OverlaySlot->SetVerticalAlignment(VAlign_Top);
 	}
 }
 
