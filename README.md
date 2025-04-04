@@ -16,10 +16,11 @@ This widget is ideal for developers looking to implement responsive and dynamic 
 Adding the widget directly to the character's blueprint in the BeginPlay even
 
 
-![Gif](Images/OverlayWidgetGif.gif)
+![Gif](https://github.com/rafaelvaloto/DualsenseOverlayUnreal/blob/main/Images/OverlayWidgetGif.gif)
 
 
-![Blueprint](Images/SinglePlayer.png)
+
+![Blueprint](https://github.com/rafaelvaloto/DualsenseOverlayUnreal/blob/main/Images/SinglePlayer.png)
 
 
 # Usage Via C++
@@ -199,7 +200,7 @@ void AMyGameModeBase::HandleConnectedControllers(APlayerController* PlayerContro
 
 ```
 
-![Blueprint](Images/4Players.png)
+![Blueprint](https://github.com/rafaelvaloto/DualsenseOverlayUnreal/blob/main/Images/4Players.png)
 
 
 
