@@ -100,78 +100,78 @@ void AMyGameModeBase::PostLogin(APlayerController* NewPlayer)
 	if (UUserWidget* DeviceWidget = CreateWidget<UUserWidget>(NewPlayer, DeviceWidgetBlueprintClass))
 	{
 		UBaseInputWidget* WidgetCasting = Cast<UBaseInputWidget>(DeviceWidget);
-		if (WidgetCasting)
-		{
-			if (PlayerId == 0)
-			{
-				WidgetCasting->SelectDevice(EDualSenseModel::Default);
-				WidgetCasting->AddToPlayerScreen(PlayerId);
-		
-				FInputModeGameAndUI InputMode;
-				InputMode.SetWidgetToFocus(WidgetCasting->TakeWidget());
-				NewPlayer->SetInputMode(InputMode);
-
-				if (UOverlaySlot* OverlaySlot = Cast<UOverlaySlot>(WidgetCasting->Slot))
-				{
-					OverlaySlot->SetHorizontalAlignment(HAlign_Center);
-					OverlaySlot->SetVerticalAlignment(VAlign_Top);
-				}
-				
-				UE_LOG(LogTemp, Log, TEXT("Widget loading Player: %d"), NewPlayer->GetLocalPlayer()->GetControllerId());
-			}
-			else if (PlayerId == 1)
-			{
-				WidgetCasting->SelectDevice(EDualSenseModel::CosmicRed);
-				WidgetCasting->AddToPlayerScreen(PlayerId);
-		
-				FInputModeGameAndUI InputMode;
-				InputMode.SetWidgetToFocus(WidgetCasting->TakeWidget());
-				NewPlayer->SetInputMode(InputMode);
-
-				if (UOverlaySlot* OverlaySlot = Cast<UOverlaySlot>(WidgetCasting->Slot))
-				{
-					OverlaySlot->SetHorizontalAlignment(HAlign_Center);
-					OverlaySlot->SetVerticalAlignment(VAlign_Bottom);
-				}
-				UE_LOG(LogTemp, Log, TEXT("Widget loading Player:: %d"), NewPlayer->GetLocalPlayer()->GetControllerId());
-			}
-			else if (PlayerId == 2)
-			{
-				WidgetCasting->SelectDevice(EDualSenseModel::MidnightBlack);
-				WidgetCasting->AddToPlayerScreen(PlayerId);
-		
-				FInputModeGameAndUI InputMode;
-				InputMode.SetWidgetToFocus(WidgetCasting->TakeWidget());
-				NewPlayer->SetInputMode(InputMode);
-
-				if (UOverlaySlot* OverlaySlot = Cast<UOverlaySlot>(WidgetCasting->Slot))
-				{
-					OverlaySlot->SetHorizontalAlignment(HAlign_Center);
-					OverlaySlot->SetVerticalAlignment(VAlign_Bottom);
-				}
-				UE_LOG(LogTemp, Log, TEXT("Widget loading Player:: %d"), NewPlayer->GetLocalPlayer()->GetControllerId());
-			}
-			else if (PlayerId == 3)
-			{
-				WidgetCasting->SelectDevice(EDualSenseModel::GalacticPurple);
-				WidgetCasting->AddToPlayerScreen(PlayerId);
-		
-				FInputModeGameAndUI InputMode;
-				InputMode.SetWidgetToFocus(WidgetCasting->TakeWidget());
-				NewPlayer->SetInputMode(InputMode);
-
-				if (UOverlaySlot* OverlaySlot = Cast<UOverlaySlot>(WidgetCasting->Slot))
-				{
-					OverlaySlot->SetHorizontalAlignment(HAlign_Center);
-					OverlaySlot->SetVerticalAlignment(VAlign_Bottom);
-				}
-				UE_LOG(LogTemp, Log, TEXT("Widget loading Player: %d"), NewPlayer->GetLocalPlayer()->GetControllerId());
-			}
-		}
-		else
+		if (!WidgetCasting)
 		{
 			UE_LOG(LogTemp, Error, TEXT("Failed to cast widget to BaseInputWidget"));
+			return;
 		}
+
+		if (PlayerId == 0)
+		{
+			WidgetCasting->SelectDevice(EDualSenseModel::Default);
+			WidgetCasting->AddToPlayerScreen(PlayerId);
+	
+			FInputModeGameAndUI InputMode;
+			InputMode.SetWidgetToFocus(WidgetCasting->TakeWidget());
+			NewPlayer->SetInputMode(InputMode);
+
+			if (UOverlaySlot* OverlaySlot = Cast<UOverlaySlot>(WidgetCasting->Slot))
+			{
+				OverlaySlot->SetHorizontalAlignment(HAlign_Center);
+				OverlaySlot->SetVerticalAlignment(VAlign_Top);
+			}
+			
+			UE_LOG(LogTemp, Log, TEXT("Widget loading Default Player: %d"), NewPlayer->GetLocalPlayer()->GetControllerId());
+		}
+		else if (PlayerId == 1)
+		{
+			WidgetCasting->SelectDevice(EDualSenseModel::CosmicRed);
+			WidgetCasting->AddToPlayerScreen(PlayerId);
+	
+			FInputModeGameAndUI InputMode;
+			InputMode.SetWidgetToFocus(WidgetCasting->TakeWidget());
+			NewPlayer->SetInputMode(InputMode);
+
+			if (UOverlaySlot* OverlaySlot = Cast<UOverlaySlot>(WidgetCasting->Slot))
+			{
+				OverlaySlot->SetHorizontalAlignment(HAlign_Center);
+				OverlaySlot->SetVerticalAlignment(VAlign_Bottom);
+			}
+			UE_LOG(LogTemp, Log, TEXT("Widget loading CosmicRed Player:: %d"), NewPlayer->GetLocalPlayer()->GetControllerId());
+		}
+		else if (PlayerId == 2)
+		{
+			WidgetCasting->SelectDevice(EDualSenseModel::MidnightBlack);
+			WidgetCasting->AddToPlayerScreen(PlayerId);
+	
+			FInputModeGameAndUI InputMode;
+			InputMode.SetWidgetToFocus(WidgetCasting->TakeWidget());
+			NewPlayer->SetInputMode(InputMode);
+
+			if (UOverlaySlot* OverlaySlot = Cast<UOverlaySlot>(WidgetCasting->Slot))
+			{
+				OverlaySlot->SetHorizontalAlignment(HAlign_Center);
+				OverlaySlot->SetVerticalAlignment(VAlign_Bottom);
+			}
+			UE_LOG(LogTemp, Log, TEXT("Widget loading MidnightBlack Player:: %d"), NewPlayer->GetLocalPlayer()->GetControllerId());
+		}
+		else if (PlayerId == 3)
+		{
+			WidgetCasting->SelectDevice(EDualSenseModel::GalacticPurple);
+			WidgetCasting->AddToPlayerScreen(PlayerId);
+	
+			FInputModeGameAndUI InputMode;
+			InputMode.SetWidgetToFocus(WidgetCasting->TakeWidget());
+			NewPlayer->SetInputMode(InputMode);
+
+			if (UOverlaySlot* OverlaySlot = Cast<UOverlaySlot>(WidgetCasting->Slot))
+			{
+				OverlaySlot->SetHorizontalAlignment(HAlign_Center);
+				OverlaySlot->SetVerticalAlignment(VAlign_Bottom);
+			}
+			UE_LOG(LogTemp, Log, TEXT("Widget loading GalacticPurple Player: %d"), NewPlayer->GetLocalPlayer()->GetControllerId());
+		}
+		
 	}
 
 	if (constexpr int32 MaxPlayer = 4; NewPlayer->IsLocalController() &&  (PlayerId + 1) < MaxPlayer)
