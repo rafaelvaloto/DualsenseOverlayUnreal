@@ -9,12 +9,12 @@ public class PSOnScreenControllerOverlay : ModuleRules
 {
 	public PSOnScreenControllerOverlay(ReadOnlyTargetRules Target) : base(Target)
 	{
-		PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
-		
 		if (Target.Platform != UnrealTargetPlatform.Win64)
 		{
-			throw new BuildException("PSOnScreenControllerOverlay not suported platform: " + Target.Platform.ToString());
+			return;
 		}
+		
+		PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
 		
 		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "UMG"});
 

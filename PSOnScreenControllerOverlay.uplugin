@@ -15,6 +15,7 @@
 	"EngineVersion": "5.4.0",
 	"CanContainContent": true,
 	"EnabledByDefault": false,
+	"SupportedTargetPlatforms": true,
 	"Modules": [
 		{
 			"Name": "PSOnScreenControllerOverlay",
