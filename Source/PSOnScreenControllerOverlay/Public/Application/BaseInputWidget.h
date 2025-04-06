@@ -1,4 +1,6 @@
-﻿// Fill out your copyright notice in the Description page of Project Settings.
+﻿// Copyright (c) 2025 Rafael Valoto/Publisher. All rights reserved.
+// Created for: FPSOnScreenControllerOverlay - Plugin to widget overlay DualSense devices
+// Planned Release Year: 2025
 
 #pragma once
 
@@ -28,8 +30,6 @@ class PSONSCREENCONTROLLEROVERLAY_API UBaseInputWidget : public UUserWidget
 	GENERATED_BODY()
 
 public:
-	explicit UBaseInputWidget(const FObjectInitializer& ObjectInitializer);
-	
 	UFUNCTION(BlueprintCallable, Category = "Game Events")
 	TMap<FName, bool> GetButtonStates()
 	{

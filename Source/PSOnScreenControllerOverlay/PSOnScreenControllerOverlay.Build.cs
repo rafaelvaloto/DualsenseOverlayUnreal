@@ -1,7 +1,8 @@
-// Some copyright should be here...
+// Copyright (c) 2025 Rafael Valoto/Publisher. All rights reserved.
+// Created for: FPSOnScreenControllerOverlay - Plugin to widget overlay DualSense devices
+// Planned Release Year: 2025
 
 using UnrealBuildTool;
-using System.Collections.Generic;
 
 public class PSOnScreenControllerOverlay : ModuleRules
 {
@@ -9,28 +10,20 @@ public class PSOnScreenControllerOverlay : ModuleRules
 	{
 		PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
 		
-		PublicDependencyModuleNames.AddRange(new string[]
-		{
-			"Core",
-			"InputCore",
-			"UMG"
-		});
-			
-		
+		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "UMG"});
+
 		PrivateDependencyModuleNames.AddRange(new string[]
 		{
-			"CoreUObject",
-			"Engine",
 			"Slate",
 			"SlateCore"
 		});
 		
-		PublicIncludePaths.AddRange(new string[] {
-			"PSOnScreenControllerOverlay/Public"
+		PublicIncludePaths.AddRange(new string[]
+		{
+			
 		});
 		
 		PrivateIncludePaths.AddRange(new string[] {
-			"PSOnScreenControllerOverlay/Private"
 		});
 	}
 }

@@ -5,26 +5,25 @@
 	"FriendlyName": "PSOnScreenControllerOverlay",
 	"Description": "Dualsense series overlay devices real time input",
 	"CreatedBy": "Rafael Valoto",
+	"CreatedByURL": "https://github.com/rafaelvaloto",
+	"DocsURL": "https://github.com/rafaelvaloto/DualsenseOverlayUnreal",
+	"FabURL": "com.epicgames.launcher://ue/Fab/product/7ce6ee97-d13c-4e4a-9775-770e10dd10fb",
 	"Category": "UI",
-	"CreatedByURL": "",
-	"DocsURL": "",
-	"MarketplaceURL": "",
-	"SupportURL": "",
 	"IsBetaVersion": true,
 	"IsExperimentalVersion": false,
-	"EngineVersions": ["5.3", "5.4", "5.5"],
-	"SupportedTargetPlatforms": true,
 	"Installed": true,
+	"EngineVersion": "5.4.0",
+	"CanContainContent": true,
+	"EnabledByDefault": false,
 	"Modules": [
 		{
 			"Name": "PSOnScreenControllerOverlay",
 			"Type": "Runtime",
-			"LoadingPhase": "Default"
+			"LoadingPhase": "Default",
+			"CanBeUsedWithUnrealHeaderTool": true,
+			"PlatformAllowList": [
+				"Win64"
+			]
 		}
-	],
-	"CanContainContent": true,
-	"ContentFolders": [
-		"Content"
 	]
-
-}
+}	

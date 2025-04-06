@@ -1,4 +1,4 @@
-﻿# Overlay Controllers, Dualsense Series for Unreal Engine 5.3, 5.4, and 5.5
+﻿# Overlay Controllers, Dualsense Series for Unreal Engine  5.4 and 5.5
 
 The **DualSenseOnScreenOverlay** is a versatile and customizable widget for Unreal Engine, designed to seamlessly adapt to various screen sizes and resolutions.
 
@@ -177,8 +177,6 @@ void AMyGameModeBase::HandleConnectedControllers(APlayerController* PlayerContro
 # Installation
 Download the compiled plugin **Windows x64**
 
-[UE 5.3 download plugin PSOnScreenControllerOverlay_5.3.zip](PSOnScreenControllerOverlay_5.3.zip)
-
 [UE 5.4 download plugin PSOnScreenControllerOverlay_5.4.zip](PSOnScreenControllerOverlay_5.4.zip)
 
 [UE 5.5 download plugin PSOnScreenControllerOverlay_5.5.zip](PSOnScreenControllerOverlay_5.5.zip)
@@ -187,6 +185,38 @@ Download the compiled plugin **Windows x64**
 Extract the file to
 
 ```C:\Program Files\Epic Games\UE_[version]\Engine\Plugins```
+
+# Installing the Plugin in the Project's Directory
+
+## Steps:
+
+1. **Clone the Repository**  
+   Clone the desired GitHub repository to your local machine by running the following command:
+   ```bash
+   git clone https://github.com/<repository-owner>/<repository-name>.git
+   ```
+   Replace `<repository-owner>` and `<repository-name>` with the appropriate values.
+
+2. **Move to the Plugins Folder**  
+   Move the cloned repository to your Unreal Engine project’s `Plugins` directory. If the folder does not exist, create it manually:
+    - Navigate to your Unreal project’s root directory.
+    - Create a folder named `Plugins`, if it doesn’t already exist.
+    - Move the cloned repository folder into this newly created `Plugins` folder.
+
+3. **Verify Plugin Installation in Unreal Engine**
+    - Open your Unreal Engine project.
+    - Go to the "Plugins" section under the `Edit` menu (`Edit > Plugins`).
+    - Look for the new plugin in the list and enable it if it is not enabled by default.
+    - Restart the Unreal Engine editor.
+
+### Example
+If you’re cloning a repository, for example, `WindowsDualsenseUnreal`:
+```bash
+git clone https://github.com/rafaelvaloto/WindowsDualsenseUnreal.git
+```
+Move the `WindowsDualsenseUnreal` folder into:
+
+
 
 # Contributions
 

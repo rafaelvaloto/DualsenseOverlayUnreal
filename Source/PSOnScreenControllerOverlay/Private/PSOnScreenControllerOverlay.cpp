@@ -1,4 +1,6 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
+// Copyright (c) 2025 Rafael Valoto/Publisher. All rights reserved.
+// Created for: FPSOnScreenControllerOverlay - Plugin to widget overlay DualSense devices
+// Planned Release Year: 2025
 
 #include "PSOnScreenControllerOverlay.h"
 

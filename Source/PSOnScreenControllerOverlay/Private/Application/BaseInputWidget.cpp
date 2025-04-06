@@ -1,19 +1,16 @@
-﻿// Fill out your copyright notice in the Description page of Project Settings.
+﻿// Copyright (c) 2025 Rafael Valoto/Publisher. All rights reserved.
+// Created for: FPSOnScreenControllerOverlay - Plugin to widget overlay DualSense devices
+// Planned Release Year: 2025
 
 
 #include "Application/BaseInputWidget.h"
 #include "Engine/Texture2D.h"
 
-UBaseInputWidget::UBaseInputWidget(const FObjectInitializer& ObjectInitializer)
-	: Super(ObjectInitializer)
-{
-	SetIsFocusable(true);
-}
-
 void UBaseInputWidget::NativeOnInitialized()
 {
 	Super::NativeOnInitialized();
 
+	SetIsFocusable(true);
 	SetFocus();
 	SetKeyboardFocus();
 	if (bEnableDebugLogs_Gamepad)
