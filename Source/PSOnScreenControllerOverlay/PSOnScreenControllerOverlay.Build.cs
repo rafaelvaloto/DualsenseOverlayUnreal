@@ -4,6 +4,7 @@
 
 using UnrealBuildTool;
 
+[SupportedPlatforms("Win64")]
 public class PSOnScreenControllerOverlay : ModuleRules
 {
 	public PSOnScreenControllerOverlay(ReadOnlyTargetRules Target) : base(Target)
