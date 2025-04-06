@@ -9,10 +9,8 @@ public class PSOnScreenControllerOverlay : ModuleRules
 {
 	public PSOnScreenControllerOverlay(ReadOnlyTargetRules Target) : base(Target)
 	{
-		if (Target.Platform != UnrealTargetPlatform.Win64)
-		{
-			return;
-		}
+		if (Target.Platform != UnrealTargetPlatform.Win64) return;
+		
 		
 		PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
 		

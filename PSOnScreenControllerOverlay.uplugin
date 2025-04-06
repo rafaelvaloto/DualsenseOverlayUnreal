@@ -14,14 +14,15 @@
 	"Installed": true,
 	"EngineVersion": "5.4.0",
 	"CanContainContent": true,
-	"EnabledByDefault": false,
-	"SupportedTargetPlatforms": true,
+	"EnabledByDefault": true,
+	"SupportedTargetPlatforms": [
+		"Win64"
+	],
 	"Modules": [
 		{
 			"Name": "PSOnScreenControllerOverlay",
 			"Type": "Runtime",
 			"LoadingPhase": "Default",
-			"CanBeUsedWithUnrealHeaderTool": true,
 			"PlatformAllowList": [
 				"Win64"
 			]
