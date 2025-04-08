@@ -22,10 +22,6 @@ You can install the plugin directly from the official page on Fab. Click the lin
 
 [Watch the Example Video](https://1drv.ms/v/c/6c07d40187e87b76/EV9sGl0t6-VAnsWXfITYcnEBAJ1vPWZ-L0HXnCdFjkWUzg)
 
-Adding the widget directly to the character's blueprint in the BeginPlay
-
-![Gif](Images/BP_tutorial.gif)
-
 # Usage Via C++
 
 Example of creating 4 players with different widgets
