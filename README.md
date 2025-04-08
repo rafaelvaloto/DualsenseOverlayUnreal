@@ -6,25 +6,27 @@ It offers extensive compatibility with multiple DualSense controller models, pro
 
 This widget is ideal for developers looking to implement responsive and dynamic overlays with DualSense support directly within Unreal Engine projects.
 
-> **Note:** No need to configure the buttons; they are already mapped to the default gamepad layout. 
+
+> **Note:** No need to configure the buttons; they are already mapped to the default gamepad layout.
 >
 > You can also use the [`WindowsDualsense`](https://github.com/rafaelvaloto/WindowsDualsenseUnreal) plugin for Unreal for better compatibility
 
 
-# Usage Via Blueprints
+# Install Plugin on Fab
 
-Adding the widget directly to the character's blueprint in the BeginPlay even
+You can install the plugin directly from the official page on Fab. Click the link below to access the page:
 
+[Install plugin on Fab](https://fab.com/s/3892fa15cfa1)
 
-![Gif](https://github.com/rafaelvaloto/DualsenseOverlayUnreal/blob/main/Images/OverlayWidgetGif.gif)
+# Usage
 
+[Watch the Example Video](https://1drv.ms/v/c/6c07d40187e87b76/EV9sGl0t6-VAnsWXfITYcnEBAJ1vPWZ-L0HXnCdFjkWUzg)
 
+Adding the widget directly to the character's blueprint in the BeginPlay
 
-![Blueprint](https://github.com/rafaelvaloto/DualsenseOverlayUnreal/blob/main/Images/SinglePlayer.png)
-
+![Gif](Images/BP_tutorial.gif)
 
 # Usage Via C++
-
 
 Example of creating 4 players with different widgets
 
@@ -174,7 +176,7 @@ void AMyGameModeBase::HandleConnectedControllers(APlayerController* PlayerContro
 
 
 
-# Installation
+# Manual Installation
 Download the compiled plugin **Windows x64**
 
 [UE 5.4 download plugin PSOnScreenControllerOverlay_5.4.zip](PSOnScreenControllerOverlay_5.4.zip)
