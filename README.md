@@ -1,4 +1,4 @@
-﻿# Overlay Controllers, Dualsense Series for Unreal Engine  5.4 and 5.5
+﻿# Overlay Controllers, Dualsense Series for Unreal Engine  5.2 ~ 5.5
 
 The **DualSenseOnScreenOverlay** is a versatile and customizable widget for Unreal Engine, designed to seamlessly adapt to various screen sizes and resolutions.
 
