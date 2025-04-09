@@ -102,7 +102,7 @@ void UBaseInputWidget::HandleGamepadAnalogLeft2D(const FKey& Key, const float An
 		LeftStickOffset.Y = AnalogValue * -1.f;
 	}
 
-	const float DeadZone = 0.2f;
+	const float DeadZone = 0.02f;
 	if (FMath::Abs(LeftStickOffset.X) < DeadZone && FMath::Abs(LeftStickOffset.Y) < DeadZone)
 	{
 		RenderGamepadAnalogLeft2D = FVector2D::ZeroVector;
@@ -110,10 +110,10 @@ void UBaseInputWidget::HandleGamepadAnalogLeft2D(const FKey& Key, const float An
 	}
 
 	float DeltaTime = GetWorld()->GetDeltaSeconds();
-	const float InterpSpeed = 45.0f; // Controla a velocidade da interpolação
+	const float InterpSpeed = 80.0f; // Controla a velocidade da interpolação
 	FVector2D TargetValue = RenderGamepadAnalogLeft2D; // Valor final que você quer atingir
 	FVector2D SmoothedValue = FMath::Vector2DInterpTo(LeftStickOffset, TargetValue, DeltaTime, InterpSpeed);
-	RenderGamepadAnalogLeft2D = SmoothedValue;
+	RenderGamepadAnalogLeft2D = SmoothedValue * 1.f;
 }
 
 void UBaseInputWidget::HandleGamepadAnalogRight2D(const FKey& Key, const float AnalogValue)
@@ -130,7 +130,7 @@ void UBaseInputWidget::HandleGamepadAnalogRight2D(const FKey& Key, const float A
 		RightStickOffset.Y = AnalogValue * -1.f;
 	}
 
-	const float DeadZone = 0.2f;
+	const float DeadZone = 0.02f;
 	if (FMath::Abs(RightStickOffset.X) < DeadZone && FMath::Abs(RightStickOffset.Y) < DeadZone)
 	{
 		RenderGamepadAnalogRight2D = FVector2D::ZeroVector;
@@ -138,10 +138,10 @@ void UBaseInputWidget::HandleGamepadAnalogRight2D(const FKey& Key, const float A
 	}
 	
 	float DeltaTime = GetWorld()->GetDeltaSeconds();
-	const float InterpSpeed = 45.0f; // Controla a velocidade da interpolação
+	const float InterpSpeed = 80.0f; // Controla a velocidade da interpolação
 	FVector2D TargetValue = RenderGamepadAnalogRight2D; // Valor final que você quer atingir
 	FVector2D SmoothedValue = FMath::Vector2DInterpTo(RightStickOffset, TargetValue, DeltaTime, InterpSpeed);
-	RenderGamepadAnalogRight2D = SmoothedValue;
+	RenderGamepadAnalogRight2D = SmoothedValue * 1.f;
 }
 
 bool UBaseInputWidget::GetGamepadPS_Menu()
@@ -204,11 +204,16 @@ void UBaseInputWidget::SelectDevice(EDualSenseModel DeviceModel)
 	FString* FoundString = Device.Find(DeviceModel);
 	if (FoundString)
 	{
+		UTexture2D* Texture0 = Cast<UTexture2D>(StaticLoadObject(UTexture2D::StaticClass(), nullptr, TEXT("/PSOnScreenControllerOverlay/DS_Icons/DualSense.DualSense")));
 		UTexture2D* Texture1 = Cast<UTexture2D>(StaticLoadObject(UTexture2D::StaticClass(), nullptr, TEXT("/PSOnScreenControllerOverlay/DS_Icons/DualSenseNovaPink.DualSenseNovaPink")));
 		UTexture2D* Texture2 = Cast<UTexture2D>(StaticLoadObject(UTexture2D::StaticClass(), nullptr, TEXT("/PSOnScreenControllerOverlay/DS_Icons/DualSenseGalacticPurple.DualSenseGalacticPurple")));
 		UTexture2D* Texture3 = Cast<UTexture2D>(StaticLoadObject(UTexture2D::StaticClass(), nullptr, TEXT("/PSOnScreenControllerOverlay/DS_Icons/DualSenseMidnightBlack.DualSenseMidnightBlack")));
 		UTexture2D* Texture4 = Cast<UTexture2D>(StaticLoadObject(UTexture2D::StaticClass(), nullptr, TEXT("/PSOnScreenControllerOverlay/DS_Icons/DualSenseStarlightBlue.DualSenseStarlightBlue")));
 		UTexture2D* Texture5 = Cast<UTexture2D>(StaticLoadObject(UTexture2D::StaticClass(), nullptr, TEXT("/PSOnScreenControllerOverlay/DS_Icons/DualSenseCosmicRed.DualSenseCosmicRed")));
+		if (!Texture0)
+		{
+			UE_LOG(LogTemp, Warning, TEXT("Texture0 Failed to load texture: /PSOnScreenControllerOverlay/DS_Icons/DualSense.DualSense"));
+		}
 		if (!Texture1)
 		{
 			UE_LOG(LogTemp, Warning, TEXT("Texture1 Failed to load texture: /PSOnScreenControllerOverlay/DS_Icons/DualSenseNovaPink.DualSenseNovaPink"));

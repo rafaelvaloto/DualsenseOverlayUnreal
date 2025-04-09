@@ -170,51 +170,35 @@ void AMyGameModeBase::HandleConnectedControllers(APlayerController* PlayerContro
 
 ![Blueprint](https://github.com/rafaelvaloto/DualsenseOverlayUnreal/blob/main/Images/4Players.png)
 
-
-
 # Manual Installation
-Download the compiled plugin **Windows x64**
 
-[UE 5.4 download plugin PSOnScreenControllerOverlay_5.4.zip](PSOnScreenControllerOverlay_5.4.zip)
+Download plugin UE_Version
 
-[UE 5.5 download plugin PSOnScreenControllerOverlay_5.5.zip](PSOnScreenControllerOverlay_5.5.zip)
+[UE 5.4 download plugin PSOnScreenControllerOverlay_5.2.zip](https://1drv.ms/u/c/6c07d40187e87b76/EWDNr59-yEpHqIOgbeQTKvUBM-W-3-rwN_bXpb-j3zvW8g?e=IBNPnM)
 
+[UE 5.4 download plugin PSOnScreenControllerOverlay_5.3.zip](https://1drv.ms/u/c/6c07d40187e87b76/EfVACNZ8Pz1FmiPlnbhdEHYBnujS0PPLJmblbBP64Lvunw?e=wMcduI)
 
-Extract the file to
+[UE 5.4 download plugin PSOnScreenControllerOverlay_5.4.zip](https://1drv.ms/u/c/6c07d40187e87b76/ES03YDrgNBJDmjQzYOkxMFcB_En7dPizyROMOPLAnSV5QQ?e=cPutog)
 
-```C:\Program Files\Epic Games\UE_[version]\Engine\Plugins```
+[UE 5.5 download plugin PSOnScreenControllerOverlay_5.5.zip](https://1drv.ms/u/c/6c07d40187e87b76/EX1kZovM8tFDsO19G1uhqU8BbLWe6qsP9QDPeHhTBB1ywA?e=vgge5e)
 
 # Installing the Plugin in the Project's Directory
 
 ## Steps:
 
-1. **Clone the Repository**  
-   Clone the desired GitHub repository to your local machine by running the following command:
-   ```bash
-   git clone https://github.com/<repository-owner>/<repository-name>.git
-   ```
-   Replace `<repository-owner>` and `<repository-name>` with the appropriate values.
-
-2. **Move to the Plugins Folder**  
+1. **Move to the Plugins Folder**  
    Move the cloned repository to your Unreal Engine project’s `Plugins` directory. If the folder does not exist, create it manually:
-    - Navigate to your Unreal project’s root directory.
-    - Create a folder named `Plugins`, if it doesn’t already exist.
-    - Move the cloned repository folder into this newly created `Plugins` folder.
+   - Navigate to your Unreal project’s root directory.
+   - Create a folder named `Plugins`, if it doesn’t already exist.
+   - Move the cloned repository folder into this newly created `Plugins` folder.
 
-3. **Verify Plugin Installation in Unreal Engine**
-    - Open your Unreal Engine project.
-    - Go to the "Plugins" section under the `Edit` menu (`Edit > Plugins`).
-    - Look for the new plugin in the list and enable it if it is not enabled by default.
-    - Restart the Unreal Engine editor.
+2. **Verify Plugin Installation in Unreal Engine**
+   - Open your Unreal Engine project.
+   - Go to the "Plugins" section under the `Edit` menu (`Edit > Plugins`).
+   - Look for the new plugin in the list and enable it if it is not enabled by default.
+   - Restart the Unreal Engine editor.
 
-### Example
-If you’re cloning a repository, for example, `WindowsDualsenseUnreal`:
-```bash
-git clone https://github.com/rafaelvaloto/WindowsDualsenseUnreal.git
-```
 Move the `WindowsDualsenseUnreal` folder into:
-
-
 
 # Contributions
 

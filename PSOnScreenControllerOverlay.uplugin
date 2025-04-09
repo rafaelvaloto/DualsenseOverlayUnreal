@@ -12,12 +12,9 @@
 	"IsBetaVersion": true,
 	"IsExperimentalVersion": false,
 	"Installed": true,
-	"EngineVersion": "5.4.0",
+	"EngineVersion": "5.2.0",
 	"CanContainContent": true,
-	"EnabledByDefault": true,
-	"SupportedTargetPlatforms": [
-		"Win64"
-	],
+	"EnabledByDefault": false,
 	"Modules": [
 		{
 			"Name": "PSOnScreenControllerOverlay",

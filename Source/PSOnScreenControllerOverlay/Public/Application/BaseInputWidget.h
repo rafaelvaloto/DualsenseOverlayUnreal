@@ -177,7 +177,7 @@ protected:
 	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "UI")
 	TMap<EDualSenseModel, FString> Device = {
-		{ EDualSenseModel::Default, TEXT("/PSOnScreenControllerOverlay/DS_Icons/DualSense_Controller_Layout_VSCView__No_Analog_Stick_.DualSense_Controller_Layout_VSCView__No_Analog_Stick_") },
+		{ EDualSenseModel::Default, TEXT("/PSOnScreenControllerOverlay/DS_Icons/DualSense.DualSense") },
 		{ EDualSenseModel::CosmicRed, TEXT("/PSOnScreenControllerOverlay/DS_Icons/DualSenseCosmicRed.DualSenseCosmicRed") },
 		{ EDualSenseModel::MidnightBlack, TEXT("/PSOnScreenControllerOverlay/DS_Icons/DualSenseMidnightBlack.DualSenseMidnightBlack") },
 		{ EDualSenseModel::StarlightBlue, TEXT("/PSOnScreenControllerOverlay/DS_Icons/DualSenseStarlightBlue.DualSenseStarlightBlue")  },
