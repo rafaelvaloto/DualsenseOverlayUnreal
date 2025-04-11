@@ -174,9 +174,9 @@ void AMyGameModeBase::HandleConnectedControllers(APlayerController* PlayerContro
 
 Download plugin UE_Version
 
-[UE 5.4 download plugin PSOnScreenControllerOverlay_5.2.zip](https://1drv.ms/u/c/6c07d40187e87b76/EWDNr59-yEpHqIOgbeQTKvUBM-W-3-rwN_bXpb-j3zvW8g?e=IBNPnM)
+[UE 5.2 download plugin PSOnScreenControllerOverlay_5.2.zip](https://1drv.ms/u/c/6c07d40187e87b76/EWDNr59-yEpHqIOgbeQTKvUBM-W-3-rwN_bXpb-j3zvW8g?e=IBNPnM)
 
-[UE 5.4 download plugin PSOnScreenControllerOverlay_5.3.zip](https://1drv.ms/u/c/6c07d40187e87b76/EfVACNZ8Pz1FmiPlnbhdEHYBnujS0PPLJmblbBP64Lvunw?e=wMcduI)
+[UE 5.3 download plugin PSOnScreenControllerOverlay_5.3.zip](https://1drv.ms/u/c/6c07d40187e87b76/EfVACNZ8Pz1FmiPlnbhdEHYBnujS0PPLJmblbBP64Lvunw?e=wMcduI)
 
 [UE 5.4 download plugin PSOnScreenControllerOverlay_5.4.zip](https://1drv.ms/u/c/6c07d40187e87b76/ES03YDrgNBJDmjQzYOkxMFcB_En7dPizyROMOPLAnSV5QQ?e=cPutog)
 
