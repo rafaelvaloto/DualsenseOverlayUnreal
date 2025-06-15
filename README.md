@@ -1,4 +1,4 @@
-﻿# DualSense Overlay Widget for Unreal Engine 5.2 ~ 5.5
+﻿# DualSense Overlay Widget for Unreal Engine 5.2 ~ 5.6
 
 The **DualSenseOnScreenOverlay** is a versatile and customizable widget for Unreal Engine, designed to seamlessly adapt to various screen sizes and resolutions.
 
@@ -9,16 +9,18 @@ This widget is ideal for developers looking to implement responsive and dynamic 
 
 > **Note:** No need to configure the buttons; they are already mapped to the default gamepad layout.
 >
-> You can also use the [`WindowsDualsense`](https://github.com/rafaelvaloto/WindowsDualsenseUnreal) plugin for Unreal for better compatibility
+> You can also use the [`DualsenseOverlay`](https://github.com/rafaelvaloto/DualsenseOverlayUnreal) plugin for Unreal for better compatibility
 
 
 # Install Plugin on Fab
 
 You can install the plugin directly from the official page on Fab. Click the link below to access the page:
 
-[Install plugin on Fab](https://fab.com/s/3892fa15cfa1)
+### [Links for installation](#Install-on-FAB-official-page-plugin)
 
-# Usage
+# Usage Via Blueprint
+
+![](Images/DualsenseWidget.png)
 
 [Watch the Example Video](https://1drv.ms/v/c/6c07d40187e87b76/EV9sGl0t6-VAnsWXfITYcnEBAJ1vPWZ-L0HXnCdFjkWUzg)
 
@@ -170,36 +172,87 @@ void AMyGameModeBase::HandleConnectedControllers(APlayerController* PlayerContro
 
 ![Blueprint](https://github.com/rafaelvaloto/DualsenseOverlayUnreal/blob/main/Images/4Players.png)
 
+# Install on FAB official page plugin
+
+To install this plugin directly via FAB (Official Source), follow the steps below:
+
+1. **Access the plugin's official page on FAB**  
+   Go to the official plugin page [by clicking here](https://fab.com/s/3892fa15cfa1).
+
+3. **Install the Plugin**
+   - On the plugin page, click the **Install** or **Add to Project** button (depending on the FAB interface).
+   - Choose your Unreal Engine project where the plugin will be used, or simply download it for manual setup.
+
+4. **Configure in Unreal Engine**
+   - Open your project in Unreal Engine.
+   - Go to the **Plugins** tab under `Edit > Plugins`.
+   - Search for `Windows DualSense Plugin` in the list and enable it if necessary.
+   - Restart the project to apply the changes.
+
+
 # Manual Installation
 
 Download plugin UE_Version
 
-[UE 5.2 download plugin PSOnScreenControllerOverlay_5.2.zip](https://1drv.ms/u/c/6c07d40187e87b76/EWDNr59-yEpHqIOgbeQTKvUBM-W-3-rwN_bXpb-j3zvW8g?e=IBNPnM)
+v1.1
 
-[UE 5.3 download plugin PSOnScreenControllerOverlay_5.3.zip](https://1drv.ms/u/c/6c07d40187e87b76/EfVACNZ8Pz1FmiPlnbhdEHYBnujS0PPLJmblbBP64Lvunw?e=wMcduI)
+[UE 5.3 download plugin DualsenseOverlay1.1.zip](https://drive.google.com/file/d/141AI1vbBWFOu-UsogfBX7eG4OhurEGJ3/view?usp=drive_link)
 
-[UE 5.4 download plugin PSOnScreenControllerOverlay_5.4.zip](https://1drv.ms/u/c/6c07d40187e87b76/ES03YDrgNBJDmjQzYOkxMFcB_En7dPizyROMOPLAnSV5QQ?e=cPutog)
+[UE 5.4 download plugin DualsenseOverlay1.1.zip](https://drive.google.com/file/d/1seGUIslOO3Zm1ZuvA6g9YtbFg_iYk_ub/view?usp=drive_link)
 
-[UE 5.5 download plugin PSOnScreenControllerOverlay_5.5.zip](https://1drv.ms/u/c/6c07d40187e87b76/EX1kZovM8tFDsO19G1uhqU8BbLWe6qsP9QDPeHhTBB1ywA?e=vgge5e)
+v1.2
 
-# Installing the Plugin in the Project's Directory
+[UE 5.2 download plugin DualsenseOverlay1.2.zip](https://drive.google.com/file/d/1FgJwZJ2siiQ8NXyCZeuujDP19p9xqn_i/view?usp=drive_link)
 
-## Steps:
+[UE 5.5 download plugin DualsenseOverlay1.2.zip](https://drive.google.com/file/d/17Nq7yXQEa_SBvazKxdzAZSvO6oSLm_Km/view?usp=drive_link)
 
-1. **Move to the Plugins Folder**  
-   Move the cloned repository to your Unreal Engine project’s `Plugins` directory. If the folder does not exist, create it manually:
-   - Navigate to your Unreal project’s root directory.
-   - Create a folder named `Plugins`, if it doesn’t already exist.
-   - Move the cloned repository folder into this newly created `Plugins` folder.
+[UE 5.6 download plugin DualsenseOverlay1.2.zip](https://drive.google.com/file/d/1yYgpd5QUeMAwaZ68xdTJAQe05U08mdkR/view?usp=drive_link)
 
-2. **Verify Plugin Installation in Unreal Engine**
-   - Open your Unreal Engine project.
-   - Go to the "Plugins" section under the `Edit` menu (`Edit > Plugins`).
-   - Look for the new plugin in the list and enable it if it is not enabled by default.
-   - Restart the Unreal Engine editor.
+## Installing the Plugin in the Project's Directory
 
-Move the `WindowsDualsenseUnreal` folder into:
+### Steps:
 
-# Contributions
+Here’s a brief outline of the installation and compilation steps shown in the video:
 
-Thanks to [Gamepad-Asset-Pack](https://github.com/AL2009man/Gamepad-Asset-Pack) for their valuable assets.
+1. Create a new Unreal Engine project.
+   - Navigate to the directory where your Unreal project is located. The default location is typically:
+   -      C:\Users\<User>\Documents\Unreal Projects\<ProjectName>\Plugins
+
+
+2. Copy the extracted plugin folder to your project's `Plugins` directory:
+   -      C:\Users\<User>\Documents\Unreal Projects\<ProjectName>\Plugins
+
+**Note**: If the `Plugins` folder does not exist, create it manually in your project's root folder.
+
+3. Activate the Plugin:
+   - Go to the **Plugins** section in Unreal Engine:
+   -      Edit > Plugins > DualsenseOverlayUnreal
+
+- Enable the plugin if it is not already active.
+4. **Restart the Unreal Editor**:
+   - After enabling the plugin, close and restart the Unreal Editor to apply the changes.
+
+## Make the Plugin Available for All Projects
+
+If you want to make the plugin available for all Unreal Engine projects, follow these steps:
+
+1. **Compile the Plugin**:
+   - Open the Unreal Editor with a project where the plugin is integrated.
+   - Navigate to the **Plugins** section:
+   -      Edit > Plugins > DualsenseOverlayUnreal
+- Click on the **Package** button for the plugin. This will generate the compiled files needed.
+
+2. **Move the Compiled Plugin**:
+   - Once the plugin is successfully compiled, navigate to the output directory where the packaged files were generated (typically inside your project directory).
+   - Copy the compiled plugin files and move them to the following directory:
+   -      C:\Program Files\Epic Games\UE_{Version}\Engine\Plugins
+
+
+3. **Access the Plugin From Any Project**:
+   - Now the plugin is installed globally for all Unreal Engine Version projects. You can enable it in any project directly from the Unreal Editor's **Plugins** menu.
+
+
+
+## Contributions
+Thanks to,
+[Gamepad-Asset-Pack](https://github.com/AL2009man/Gamepad-Asset-Pack) for their valuable assets.

@@ -102,6 +102,9 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintGetter = GetDeviceSelected, Category = "Device Selected")
 	UTexture2D* BrushDevice;
 
+	UPROPERTY(VisibleAnywhere, BlueprintGetter = GetOpacity, Category = "Device Selected")
+	float BrushDeviceOpacity;
+
 	UFUNCTION(BlueprintGetter, Category = "Analog")
 	FVector2D GetGamepadAnalogLeft2D();
 	
@@ -166,14 +169,20 @@ public:
 	bool GetGamepadRightTrigger() const;
 
 	UFUNCTION(BlueprintCallable, Category = "UI Device Select")
-	void SelectDevice(EDualSenseModel DeviceModel);
+	void SelectDevice(EDualSenseModel DeviceModel, float Opacity);
 
 	UFUNCTION(BlueprintPure, Category = "UI Device Select")
 	UTexture2D* GetDeviceSelected();
+
+	UFUNCTION(BlueprintPure, Category = "UI Device Select")
+	float GetOpacity();
 	
 protected:
 	UFUNCTION(BlueprintCallable, Category = "UI")
 	void SetImage(UTexture2D* NewImage);
+
+	UFUNCTION(BlueprintCallable, Category = "UI")
+	void SetOpacity(float NewOpacity);
 	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "UI")
 	TMap<EDualSenseModel, FString> Device = {
@@ -210,6 +219,9 @@ protected:
 
 	UPROPERTY()
 	UTexture2D* InitialTexture;
+
+	UPROPERTY()
+	float OpacityBrush;
 
 
 	virtual FReply NativeOnKeyDown( const FGeometry& InGeometry, const FKeyEvent& InKeyEvent ) override;

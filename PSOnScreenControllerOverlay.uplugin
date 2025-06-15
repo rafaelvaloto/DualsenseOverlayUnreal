@@ -1,7 +1,6 @@
 {
 	"FileVersion": 3,
-	"Version": 1,
-	"VersionName": "1.0",
+	"VersionName": "1.1",
 	"FriendlyName": "PSOnScreenControllerOverlay",
 	"Description": "Dualsense series overlay devices real time input",
 	"CreatedBy": "Rafael Valoto",

@@ -199,7 +199,7 @@ bool UBaseInputWidget::GetGamepadRightTrigger() const
 	return RenderGamepadRightTrigger > 0.01f;
 }
 
-void UBaseInputWidget::SelectDevice(EDualSenseModel DeviceModel)
+void UBaseInputWidget::SelectDevice(EDualSenseModel DeviceModel, float Opacity)
 {
 	FString* FoundString = Device.Find(DeviceModel);
 	if (FoundString)
@@ -240,7 +240,10 @@ void UBaseInputWidget::SelectDevice(EDualSenseModel DeviceModel)
 		if (Texture)
 		{
 			UE_LOG(LogTemp, Log, TEXT("Textura carregada: %s"), **FoundString);
+
+
 			SetImage(Texture);
+			SetOpacity(Opacity);
 		}
 	}
 }
@@ -250,9 +253,19 @@ UTexture2D* UBaseInputWidget::GetDeviceSelected()
 	return InitialTexture;
 }
 
+float UBaseInputWidget::GetOpacity()
+{
+	return OpacityBrush;
+}
+
 void UBaseInputWidget::SetImage(UTexture2D* NewImage)
 {
 	InitialTexture = NewImage;
+}
+
+void UBaseInputWidget::SetOpacity(float NewOpacity)
+{
+	OpacityBrush = NewOpacity;
 }
 
 bool UBaseInputWidget::GetGamepadPS_PushLeftStick()
