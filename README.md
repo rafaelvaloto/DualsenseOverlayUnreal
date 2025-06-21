@@ -194,19 +194,18 @@ To install this plugin directly via FAB (Official Source), follow the steps belo
 
 Download plugin UE_Version
 
-v1.1
+**Version 1.3.0**
+- **Fixed:** Corrected the trigger overlay display issue for the DualSense overlay.
 
-[UE 5.3 download plugin DualsenseOverlay1.1.zip](https://drive.google.com/file/d/141AI1vbBWFOu-UsogfBX7eG4OhurEGJ3/view?usp=drive_link)
+[UE 5.2 download plugin DualsenseOverlay1.3.zip](https://drive.google.com/file/d/13JeDAu8zrWwgrr3qIZoNp84MfB6h1CMV/view?usp=drive_link)
 
-[UE 5.4 download plugin DualsenseOverlay1.1.zip](https://drive.google.com/file/d/1seGUIslOO3Zm1ZuvA6g9YtbFg_iYk_ub/view?usp=drive_link)
+[UE 5.3 download plugin DualsenseOverlay1.3.zip](https://drive.google.com/file/d/1IMpzrN3PAOHoPY1OzCyaAOzkhOWQ7L8x/view?usp=drive_link)
 
-v1.2
+[UE 5.4 download plugin DualsenseOverlay1.3.zip](https://drive.google.com/file/d/1HfEem6Ukl6bavoQ5VHCGnHIbi9unVQTH/view?usp=drive_link)
 
-[UE 5.2 download plugin DualsenseOverlay1.2.zip](https://drive.google.com/file/d/1FgJwZJ2siiQ8NXyCZeuujDP19p9xqn_i/view?usp=drive_link)
+[UE 5.5 download plugin DualsenseOverlay1.3.zip](https://drive.google.com/file/d/1LotjalQrHaczFGeJITu2SS6DBbUaC8PF/view?usp=drive_link)
 
-[UE 5.5 download plugin DualsenseOverlay1.2.zip](https://drive.google.com/file/d/17Nq7yXQEa_SBvazKxdzAZSvO6oSLm_Km/view?usp=drive_link)
-
-[UE 5.6 download plugin DualsenseOverlay1.2.zip](https://drive.google.com/file/d/1yYgpd5QUeMAwaZ68xdTJAQe05U08mdkR/view?usp=drive_link)
+[UE 5.6 download plugin DualsenseOverlay1.3.zip](https://drive.google.com/file/d/1kPfhQzMbeGVhKdxo2MfQnjBqigsoCdmM/view?usp=drive_link)
 
 ## Installing the Plugin in the Project's Directory
 

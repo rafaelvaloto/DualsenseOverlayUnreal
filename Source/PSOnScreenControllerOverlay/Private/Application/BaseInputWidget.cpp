@@ -67,12 +67,12 @@ FReply UBaseInputWidget::NativeOnAnalogValueChanged(const FGeometry& InGeometry,
 		HandleGamepadAnalogRight2D(Key, AnalogValue);
 	}
 
-	if (Key == EKeys::Gamepad_LeftTrigger)
+	if (Key == EKeys::Gamepad_LeftTriggerAxis)
 	{
 		RenderGamepadLeftTrigger = AnalogValue;
 	}
 
-	if (Key == EKeys::Gamepad_RightTrigger)
+	if (Key == EKeys::Gamepad_RightTriggerAxis)
 	{
 		RenderGamepadRightTrigger = AnalogValue;
 	}
