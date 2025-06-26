@@ -1,5 +1,11 @@
 ﻿# DualSense Overlay Widget for Unreal Engine 5.2 ~ 5.6
 
+![GitHub Release](https://img.shields.io/github/v/release/rafaelvaloto/DualsenseOverlayUnreal)
+![GitHub License](https://img.shields.io/github/license/rafaelvaloto/DualsenseOverlayUnreal)
+![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/rafaelvaloto/DualsenseOverlayUnreal)
+![GitHub contributors](https://img.shields.io/github/contributors/rafaelvaloto/DualsenseOverlayUnreal)
+![GitHub Downloads (all assets, latest release)](https://img.shields.io/github/downloads/rafaelvaloto/DualsenseOverlayUnreal/latest/total)
+
 The **DualSenseOnScreenOverlay** is a versatile and customizable widget for Unreal Engine, designed to seamlessly adapt to various screen sizes and resolutions.
 
 It offers extensive compatibility with multiple DualSense controller models, providing flexible options to enhance integration and user interaction. 
