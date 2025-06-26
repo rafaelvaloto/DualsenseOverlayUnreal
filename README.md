@@ -178,7 +178,7 @@ void AMyGameModeBase::HandleConnectedControllers(APlayerController* PlayerContro
 
 ![Blueprint](https://github.com/rafaelvaloto/DualsenseOverlayUnreal/blob/main/Images/4Players.png)
 
-# Install on FAB official page plugin
+# Install on FAB official page plugin ![GitHub Release](https://img.shields.io/github/v/release/rafaelvaloto/DualsenseOverlayUnreal)
 
 To install this plugin directly via FAB (Official Source), follow the steps below:
 
@@ -196,24 +196,11 @@ To install this plugin directly via FAB (Official Source), follow the steps belo
    - Restart the project to apply the changes.
 
 
-# Manual Installation
+# Manual Installation ![GitHub Release](https://img.shields.io/github/v/release/rafaelvaloto/DualsenseOverlayUnreal)
 
-Download plugin UE_Version
+[Download plugin UE_Version ](https://github.com/rafaelvaloto/DualsenseOverlayUnreal/releases/)
 
-**Version 1.3.0**
-- **Fixed:** Corrected the trigger overlay display issue for the DualSense overlay.
-
-[UE 5.2 download plugin DualsenseOverlay1.3.zip](https://drive.google.com/file/d/13JeDAu8zrWwgrr3qIZoNp84MfB6h1CMV/view?usp=drive_link)
-
-[UE 5.3 download plugin DualsenseOverlay1.3.zip](https://drive.google.com/file/d/1IMpzrN3PAOHoPY1OzCyaAOzkhOWQ7L8x/view?usp=drive_link)
-
-[UE 5.4 download plugin DualsenseOverlay1.3.zip](https://drive.google.com/file/d/1HfEem6Ukl6bavoQ5VHCGnHIbi9unVQTH/view?usp=drive_link)
-
-[UE 5.5 download plugin DualsenseOverlay1.3.zip](https://drive.google.com/file/d/1LotjalQrHaczFGeJITu2SS6DBbUaC8PF/view?usp=drive_link)
-
-[UE 5.6 download plugin DualsenseOverlay1.3.zip](https://drive.google.com/file/d/1kPfhQzMbeGVhKdxo2MfQnjBqigsoCdmM/view?usp=drive_link)
-
-## Installing the Plugin in the Project's Directory
+Installing the Plugin in the Project's Directory 
 
 ### Steps:
 
