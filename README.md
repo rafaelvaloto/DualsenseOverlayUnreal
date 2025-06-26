@@ -15,7 +15,7 @@ This widget is ideal for developers looking to implement responsive and dynamic 
 
 > **Note:** No need to configure the buttons; they are already mapped to the default gamepad layout.
 >
-> You can also use the [`DualsenseOverlay`](https://github.com/rafaelvaloto/DualsenseOverlayUnreal) plugin for Unreal for better compatibility
+> You can also use the [ Windows Dualsense Unreal ](https://github.com/rafaelvaloto/WindowsDualsenseUnreal) plugin for Unreal for better compatibility
 
 
 # Install Plugin on Fab
