@@ -235,13 +235,30 @@ void UBaseInputWidget::SelectDevice(EDualSenseModel DeviceModel, float Opacity)
 			UE_LOG(LogTemp, Warning, TEXT("Texture5 Failed to load texture: /PSOnScreenControllerOverlay/DS_Icons/DualSenseCosmicRed.DualSenseCosmicRed"));
 		}
 
-		UE_LOG(LogTemp, Log, TEXT("Device selecionado: %s"), **FoundString);
 		UTexture2D* Texture = FindObject<UTexture2D>(nullptr, **FoundString);
 		if (Texture)
 		{
-			UE_LOG(LogTemp, Log, TEXT("Textura carregada: %s"), **FoundString);
+			IsDualChock = false;
+			SetImage(Texture);
+			SetOpacity(Opacity);
+		}
+	}
+}
 
-
+void UBaseInputWidget::DualShockSpecialEdition(EDualShockModel DeviceModel, float Opacity)
+{
+	FString* FoundString = DualShock.Find(DeviceModel);
+	if (FoundString)
+	{
+		UTexture2D* TextureSpecialEdition = Cast<UTexture2D>(StaticLoadObject(UTexture2D::StaticClass(), nullptr, TEXT("/PSOnScreenControllerOverlay/DS4_Icons/DualShock_4_20th_Model_Thumbstick.DualShock_4_20th_Model_Thumbstick")));
+		if (!TextureSpecialEdition)
+		{
+			UE_LOG(LogTemp, Warning, TEXT("Texture Special Edition Failed to load texture: /PSOnScreenControllerOverlay/DS4_Icons/DualShock_4_20th_Model_Thumbstick.DualShock_4_20th_Model_Thumbstick"));
+		}
+		UTexture2D* Texture = FindObject<UTexture2D>(nullptr, **FoundString);
+		if (Texture)
+		{
+			IsDualChock = true;
 			SetImage(Texture);
 			SetOpacity(Opacity);
 		}

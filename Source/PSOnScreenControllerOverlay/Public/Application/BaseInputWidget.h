@@ -17,7 +17,14 @@ enum class EDualSenseModel : uint8
 	MidnightBlack  UMETA(DisplayName = "Midnight Black"),
 	StarlightBlue  UMETA(DisplayName = "Starlight Blue"),
 	NovaPink       UMETA(DisplayName = "Nova Pink"),
-	GalacticPurple UMETA(DisplayName = "Galactic Purple")
+	GalacticPurple UMETA(DisplayName = "Galactic Purple"),
+	DualShock4Anniversary UMETA(DisplayName = "DualShock 4 20th Anniversary Edition")
+};
+
+UENUM(BlueprintType)
+enum class EDualShockModel : uint8
+{
+	DualShock4Anniversary UMETA(DisplayName = "DualShock 4 20th Anniversary Edition")
 };
 
 
@@ -171,11 +178,17 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "UI Device Select")
 	void SelectDevice(EDualSenseModel DeviceModel, float Opacity);
 
+	UFUNCTION(BlueprintCallable, Category = "UI Device Select")
+	void DualShockSpecialEdition(EDualShockModel DeviceModel, float Opacity);
+
 	UFUNCTION(BlueprintPure, Category = "UI Device Select")
 	UTexture2D* GetDeviceSelected();
 
 	UFUNCTION(BlueprintPure, Category = "UI Device Select")
 	float GetOpacity();
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Device Model")
+	bool IsDualChock = false;
 	
 protected:
 	UFUNCTION(BlueprintCallable, Category = "UI")
@@ -192,6 +205,11 @@ protected:
 		{ EDualSenseModel::StarlightBlue, TEXT("/PSOnScreenControllerOverlay/DS_Icons/DualSenseStarlightBlue.DualSenseStarlightBlue")  },
 		{ EDualSenseModel::NovaPink, TEXT("/PSOnScreenControllerOverlay/DS_Icons/DualSenseNovaPink.DualSenseNovaPink") },
 		{ EDualSenseModel::GalacticPurple, TEXT("/PSOnScreenControllerOverlay/DS_Icons/DualSenseGalacticPurple.DualSenseGalacticPurple") }
+	};
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "UI")
+	TMap<EDualShockModel, FString> DualShock = {
+		{ EDualShockModel::DualShock4Anniversary, TEXT("/PSOnScreenControllerOverlay/DS4_Icons/DualShock_4_20th_Model_Thumbstick.DualShock_4_20th_Model_Thumbstick") }
 	};
 
 	float RenderGamepadLeftTrigger = 0.0f;
@@ -222,6 +240,8 @@ protected:
 
 	UPROPERTY()
 	float OpacityBrush;
+
+	
 
 
 	virtual FReply NativeOnKeyDown( const FGeometry& InGeometry, const FKeyEvent& InKeyEvent ) override;
