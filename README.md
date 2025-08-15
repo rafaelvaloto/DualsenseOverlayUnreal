@@ -15,12 +15,7 @@ This widget is ideal for developers looking to implement responsive and dynamic 
 >
 > You can also use the [ Windows Dualsense Unreal ](https://github.com/rafaelvaloto/WindowsDualsenseUnreal) plugin for Unreal for better compatibility
 
-
-# Install Plugin on Fab
-
-You can install the plugin directly from the official page on Fab. Click the link below to access the page:
-
-### [Links for installation](#Install-on-FAB-official-page-plugin)
+### [Links for installation](#Install-on-FAB-official-page-plugin-)
 
 # Usage Via Blueprint
 
