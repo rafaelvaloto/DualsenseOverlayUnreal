@@ -17,9 +17,19 @@ This widget is ideal for developers looking to implement responsive and dynamic 
 
 ### [Links for installation](#Install-on-FAB-official-page-plugin-)
 
-# Usage Via Blueprint
+### Visual Blueprint Example
+- Below is a typical example of Blueprint usage:
+   - **Create Widget:** Instantiate the overlay widget.
+   - **Set Device Type:** Choose between DualShock or DualSense as needed.
+   - **Add to Viewport:** Display the overlay on screen.
 
 ![](Images/DualsenseWidget.png)
+
+---
+
+DualShock 4 or DualSense 
+
+![](Images/DualShockAndDualSenseExample.png)
 
 [Watch the Example Video](https://1drv.ms/v/c/6c07d40187e87b76/EV9sGl0t6-VAnsWXfITYcnEBAJ1vPWZ-L0HXnCdFjkWUzg)
 
