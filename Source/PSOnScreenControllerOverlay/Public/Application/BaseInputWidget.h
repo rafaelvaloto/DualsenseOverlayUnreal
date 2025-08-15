@@ -17,14 +17,13 @@ enum class EDualSenseModel : uint8
 	MidnightBlack  UMETA(DisplayName = "Midnight Black"),
 	StarlightBlue  UMETA(DisplayName = "Starlight Blue"),
 	NovaPink       UMETA(DisplayName = "Nova Pink"),
-	GalacticPurple UMETA(DisplayName = "Galactic Purple"),
-	DualShock4Anniversary UMETA(DisplayName = "DualShock 4 20th Anniversary Edition")
+	GalacticPurple UMETA(DisplayName = "Galactic Purple")
 };
 
 UENUM(BlueprintType)
 enum class EDualShockModel : uint8
 {
-	DualShock4Anniversary UMETA(DisplayName = "DualShock 4 20th Anniversary Edition")
+	DualShock4Anniversary UMETA(DisplayName = "(DualShock 4) 20th Anniversary Edition")
 };
 
 
