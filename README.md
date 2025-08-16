@@ -55,7 +55,7 @@ Connection Type Icon
 
 ![Blueprint](Images/SetConnectionTypeIcon.png)
 
-[Watch the Example Video](https://1drv.ms/v/c/6c07d40187e87b76/EV9sGl0t6-VAnsWXfITYcnEBAJ1vPWZ-L0HXnCdFjkWUzg)
+[Watch the Example Video](https://youtu.be/V-Tq0wigsFI)
 
 # Install on FAB official page plugin ![GitHub Release](https://img.shields.io/github/v/release/rafaelvaloto/DualsenseOverlayUnreal)
 
