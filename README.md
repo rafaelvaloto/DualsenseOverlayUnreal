@@ -1,19 +1,26 @@
-﻿# DualSense Overlay Widget for Unreal Engine 5.2 ~ 5.6
+﻿# DualSense & DualShock Overlay Widget for Unreal Engine 5.2 ~ 5.6
 
 ![GitHub Release](https://img.shields.io/github/v/release/rafaelvaloto/DualsenseOverlayUnreal)
 ![GitHub License](https://img.shields.io/github/license/rafaelvaloto/DualsenseOverlayUnreal)
 ![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/rafaelvaloto/DualsenseOverlayUnreal)
 
-The **DualSenseOnScreenOverlay** is a versatile and customizable widget for Unreal Engine, designed to seamlessly adapt to various screen sizes and resolutions.
+**DualSenseOnScreenOverlay** is a versatile and highly customizable widget for Unreal Engine, designed to adapt seamlessly to any screen size or resolution.
 
-It offers extensive compatibility with multiple DualSense controller models, providing flexible options to enhance integration and user interaction. 
+A key feature of this widget is its comprehensive support for different controller models: **DualSense** (including DualSense Edge) and **DualShock 4**. You can easily switch between models, and the overlay visuals—including the connection icon (USB/Bluetooth)—are carefully aligned and flexible to fit the interface of your project. This ensures accurate displays and consistent UI integration whether you're showing DualSense or DualShock controllers.
 
-This widget is ideal for developers looking to implement responsive and dynamic overlays with DualSense support directly within Unreal Engine projects.
+Perfect for developers seeking dynamic and responsive controller overlays, with special attention to authentic representation and alignment for DualSense and DualShock devices in Unreal Engine projects.
 
-
-> **Note:** No need to configure the buttons; they are already mapped to the default gamepad layout.
+> **Note:** Button mapping is automatic and uses the default controller layout, so you don't need to configure it yourself.
 >
-> You can also use the [ Windows Dualsense Unreal ](https://github.com/rafaelvaloto/WindowsDualsenseUnreal) plugin for Unreal for better compatibility
+> For enhanced compatibility on Windows, you can also use the [Windows Dualsense Unreal](https://github.com/rafaelvaloto/WindowsDualsenseUnreal) plugin.
+
+---
+
+### Visual Usage Examples
+
+- **DualSense, DualSense Edge, and DualShock 4 support** — seamlessly toggle between controller models.
+- **Overlay and connection icon alignment** — keep every element visually consistent.
+- **Opacity and position adjustments** — easily customize to fit your game UI.
 
 ### [Links for installation](#Install-on-FAB-official-page-plugin-)
 
@@ -29,11 +36,26 @@ This widget is ideal for developers looking to implement responsive and dynamic 
 
 DualShock 4 or DualSense 
 
-![](Images/DualShockAndDualSenseExample.png)
+![](Images/DualShock4Overlay.png)
+
+![](Images/DualSenseOverlay.png)
+
+
+Opacity and position alignment
+
+![Blueprint](Images/ScaleSizeAndAling.png)
+
+![Blueprint](Images/ConnectionIconAling.png)
+
+
+![Blueprint](Images/OpacityAndPosition.png)
+![Blueprint](Images/Position%20Connection%20Type.png)
+
+Connection Type Icon
+
+![Blueprint](Images/SetConnectionTypeIcon.png)
 
 [Watch the Example Video](https://1drv.ms/v/c/6c07d40187e87b76/EV9sGl0t6-VAnsWXfITYcnEBAJ1vPWZ-L0HXnCdFjkWUzg)
-
-![Blueprint](Images/Players.png)
 
 # Install on FAB official page plugin ![GitHub Release](https://img.shields.io/github/v/release/rafaelvaloto/DualsenseOverlayUnreal)
 
