@@ -91,57 +91,46 @@ void UBaseInputWidget::HandleGamepadButtonPressed(const FKey PressedKey, bool bI
 
 void UBaseInputWidget::HandleGamepadAnalogLeft2D(const FKey& Key, const float AnalogValue)
 {
-	FVector2D LeftStickOffset;
 	if (Key == EKeys::Gamepad_LeftX)
 	{
-		LeftStickOffset.X = -AnalogValue * -1.f;
+		AnalogAccLeft.X += -AnalogValue * -1.f;
 	}
 	
 	if (Key == EKeys::Gamepad_LeftY)
 	{
-		LeftStickOffset.Y = AnalogValue * -1.f;
+		AnalogAccLeft.Y += AnalogValue * -1.f;
 	}
 
-	const float DeadZone = 0.02f;
-	if (FMath::Abs(LeftStickOffset.X) < DeadZone && FMath::Abs(LeftStickOffset.Y) < DeadZone)
+	PollAccumulatorLeft += GetWorld()->GetDeltaSeconds();
+	if (PollAccumulatorLeft < 0.066f)
 	{
-		RenderGamepadAnalogLeft2D = FVector2D::ZeroVector;
 		return;
 	}
-
-	float DeltaTime = GetWorld()->GetDeltaSeconds();
-	const float InterpSpeed = 80.0f; // Controla a velocidade da interpolação
-	FVector2D TargetValue = RenderGamepadAnalogLeft2D; // Valor final que você quer atingir
-	FVector2D SmoothedValue = FMath::Vector2DInterpTo(LeftStickOffset, TargetValue, DeltaTime, InterpSpeed);
-	RenderGamepadAnalogLeft2D = SmoothedValue * 1.f;
+	PollAccumulatorLeft = 0;
+	RenderGamepadAnalogLeft2D = FMath::Vector2DInterpTo(AnalogAccLeft, RenderGamepadAnalogLeft2D, GetWorld()->GetDeltaSeconds(), 0.6f);
+	AnalogAccLeft = FVector2D::ZeroVector;
 }
 
 void UBaseInputWidget::HandleGamepadAnalogRight2D(const FKey& Key, const float AnalogValue)
 {
-
-	FVector2D RightStickOffset;
 	if (Key == EKeys::Gamepad_RightX)
 	{
-		RightStickOffset.X = -AnalogValue * -1.f;
+		AnalogAccRight.X += -AnalogValue * -1.f;
 	}
 	
 	if (Key == EKeys::Gamepad_RightY)
 	{
-		RightStickOffset.Y = AnalogValue * -1.f;
+		AnalogAccRight.Y += AnalogValue * -1.f;
 	}
 
-	const float DeadZone = 0.02f;
-	if (FMath::Abs(RightStickOffset.X) < DeadZone && FMath::Abs(RightStickOffset.Y) < DeadZone)
+	PollAccumulatorRight += GetWorld()->GetDeltaSeconds();
+	if (PollAccumulatorRight < 0.066f)
 	{
-		RenderGamepadAnalogRight2D = FVector2D::ZeroVector;
 		return;
 	}
-	
-	float DeltaTime = GetWorld()->GetDeltaSeconds();
-	const float InterpSpeed = 80.0f; // Controla a velocidade da interpolação
-	FVector2D TargetValue = RenderGamepadAnalogRight2D; // Valor final que você quer atingir
-	FVector2D SmoothedValue = FMath::Vector2DInterpTo(RightStickOffset, TargetValue, DeltaTime, InterpSpeed);
-	RenderGamepadAnalogRight2D = SmoothedValue * 1.f;
+	PollAccumulatorRight = 0;
+	RenderGamepadAnalogRight2D = FMath::Vector2DInterpTo(AnalogAccRight, RenderGamepadAnalogRight2D, GetWorld()->GetDeltaSeconds(), 0.6f);
+	AnalogAccRight = FVector2D::ZeroVector;
 }
 
 bool UBaseInputWidget::GetGamepadPS_Menu()
@@ -199,6 +188,14 @@ bool UBaseInputWidget::GetGamepadRightTrigger() const
 	return RenderGamepadRightTrigger > 0.01f;
 }
 
+void UBaseInputWidget::SetConnectionType(int32 Connection)
+{
+	if (Connection < 0)
+	{
+		SetOpacity(0.0);
+	}
+	ConnectionType = Connection;
+}
 void UBaseInputWidget::SelectDevice(EDualSenseModel DeviceModel, float Opacity)
 {
 	FString* FoundString = Device.Find(DeviceModel);
@@ -239,8 +236,8 @@ void UBaseInputWidget::SelectDevice(EDualSenseModel DeviceModel, float Opacity)
 		if (Texture)
 		{
 			IsDualChock = false;
-			SetImage(Texture);
 			SetOpacity(Opacity);
+			SetImage(Texture);
 		}
 	}
 }
@@ -259,8 +256,8 @@ void UBaseInputWidget::DualShockSpecialEdition(EDualShockModel DeviceModel, floa
 		if (Texture)
 		{
 			IsDualChock = true;
-			SetImage(Texture);
 			SetOpacity(Opacity);
+			SetImage(Texture);
 		}
 	}
 }

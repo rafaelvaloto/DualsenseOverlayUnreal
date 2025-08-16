@@ -36,11 +36,24 @@ class PSONSCREENCONTROLLEROVERLAY_API UBaseInputWidget : public UUserWidget
 	GENERATED_BODY()
 
 public:
+	float PollAccumulatorRight;
+	float PollAccumulatorLeft;
+	FVector2D AnalogAccRight;
+	FVector2D AnalogAccLeft;
 	UFUNCTION(BlueprintCallable, Category = "Game Events")
 	TMap<FName, bool> GetButtonStates()
 	{
 		return ButtonStates;
 	}
+
+	UFUNCTION(BlueprintCallable, Category = "Game Events")
+	void SetConnectionType(
+		UPARAM(DisplayName = "Connection Type (Disconnected = -1, Usb = 0, Bluetooth = 1)", meta = (UIMin = "0", UIMax = "1"))
+		int32 Connection = -1
+	);
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Connection")
+	int32 ConnectionType;
 
 	UPROPERTY(VisibleAnywhere, BlueprintGetter = GetGamepadPS_Menu, Category = "Buttons")
 	bool bGamepadPS_Menu;
@@ -175,7 +188,11 @@ public:
 	bool GetGamepadRightTrigger() const;
 
 	UFUNCTION(BlueprintCallable, Category = "UI Device Select")
-	void SelectDevice(EDualSenseModel DeviceModel, float Opacity);
+	void SelectDevice(
+		EDualSenseModel DeviceModel,
+		UPARAM(DisplayName = "Opacity min: 0.0  max: 1.0", meta = (UIMin = "0.0", UIMax = "1.0"))
+		float Opacity
+	);
 
 	UFUNCTION(BlueprintCallable, Category = "UI Device Select")
 	void DualShockSpecialEdition(EDualShockModel DeviceModel, float Opacity);
